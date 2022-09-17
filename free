@@ -1,0 +1,52 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("حياة واقعية السعودية / KSA Roleplay")
+local Tab = Window:NewTab("Player")
+local Tab1 = Window:NewTab("Players")
+local Tab2 = Window:NewTab("Made By")
+local Section = Tab:NewSection("ESP")
+local Section1 = Tab1:NewSection("Players")
+local Section2 = Tab2:NewSection("Made By Nooody")
+
+--VIRSS
+
+Section1:NewButton("gun Free", "", function()
+  local teleport_table = {
+    location1 = Vector3.new(-15387, 14, -1374)
+}
+
+local tween_s = game:GetService('TweenService')
+local tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Linear)
+
+local lp = game.Players.LocalPlayer
+
+function bypass_teleport(v)
+    if lp.Character and 
+    lp.Character:FindFirstChild('HumanoidRootPart') then
+        local cf = CFrame.new(v)
+        local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+        a:Play()
+        
+    end
+end
+
+bypass_teleport(teleport_table.location1)
+end)
+Section1:NewButton("Admin", "", function()
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section:NewButton("ESP", "", function()
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua',true))()
+end)
+
+Section2:NewKeybind("Hide Hacker", "", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+
+
+
+
+
+
+
